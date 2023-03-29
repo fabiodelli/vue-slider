@@ -19,7 +19,7 @@ const { createApp } = Vue
 createApp({
     data() {
         return {
-            activeImage: 0,
+            activeImage : 0,
             images : [
                 {
                     image: 'img/01.webp',
@@ -47,10 +47,19 @@ createApp({
     },
     methods: {
         next(){
-            this.activeImage++
+            if (this.activeImage === this.images.length - 1) {
+                this.activeImage = 0
+            } else {
+                this.activeImage++
+            }
         },
         prev(){
-            this.activeImage--
+            if (this.activeImage === 0) {
+                this.activeImage = this.images.length - 1
+            } else {
+                this.activeImage--
+            }
+           
         }
     },
 }).mount('#app')
