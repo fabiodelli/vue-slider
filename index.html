@@ -22,34 +22,35 @@
 
             <h1 class="text-center ">Slider</h1>
             <div class="container">
-                <div class="slider d-flex justify-content-center">
-                    <div class="slide d-flex justify-content-center position-relative">
-                        <img :src="'./assets/' + images[activeImage].image" alt="">
-                        <div class="position-absolute b_g text-white bottom-0 h-25 p-3 text-end">
+                <div class="slider d-flex justify-content-center" @mouseover="stopInterval" @mouseleave="startInterval">
+                    <div class="slide d-flex justify-content-center
+                        position-relative">
+                        <img :src="'./assets/' + images[activeImage].image" alt="Game img">
+                        <div class="position-absolute b_g text-white bottom-0 p-3">
                             <h3>{{ images[activeImage].title }}</h3>
                             <p>{{ images[activeImage].text }}</p>
                         </div>
                         <nav class="d-flex justify-content-center">
-                            <button  @click="prev" class="prev rounded-5">
-                                <i class="fa fa-arrow-left" ></i>
+                            <button @click="prev" class="prev rounded-5">
+                                <i class="fa fa-arrow-left"></i>
                             </button>
                             <button @click="next" class="next rounded-5">
-                                <i class="fa fa-arrow-right" ></i>
+                                <i class="fa fa-arrow-right"></i>
                             </button>
                         </nav>
-                    </div>                  
-                    
-                        <div class="thumbnail d-flex flex-column">
-                            <img v-for="(image, index) in images" :key="index" :src="'./assets/' + image.image" :alt="image.alt" @click="selected(index)" />
-                        </div>
-                                       
+                    </div>
+                    <div class="thumbnail d-flex flex-column">
+                        <img v-for="(image, index) in images" :key="index"
+                            :src="'./assets/' + image.image" :alt="image.alt"
+                            @click="selected(index)" />
+                    </div>
                 </div>
             </div>
         </div>
 
-        
 
-        
+
+
 
         <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
         <script src="./assets/js/main.js"></script>

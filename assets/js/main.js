@@ -19,8 +19,8 @@ const { createApp } = Vue
 createApp({
     data() {
         return {
-            activeImage : 0,
-            images : [
+            activeImage: 0,
+            images: [
                 {
                     image: 'img/01.webp',
                     title: 'Marvel\'s Spiderman Miles Morale',
@@ -45,23 +45,29 @@ createApp({
             ]
         }
     },
+    mounted() {
+        setInterval(this.next, 3000) 
+    },
     methods: {
-        next(){
+        next() {
             if (this.activeImage === this.images.length - 1) {
                 this.activeImage = 0
             } else {
                 this.activeImage++
             }
         },
-        prev(){
+        prev() {
             if (this.activeImage === 0) {
                 this.activeImage = this.images.length - 1
             } else {
                 this.activeImage--
             }
         },
-        selected(index){
+        selected(index) {
             this.activeImage = index
-        }
+        },
     },
 }).mount('#app')
+
+
+
