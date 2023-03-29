@@ -37,7 +37,12 @@
                                 <i class="fa fa-arrow-right" ></i>
                             </button>
                         </nav>
-                    </div>
+                    </div>                  
+                    
+                        <div class="thumbnail d-flex flex-column">
+                            <img v-for="(image, index) in images" :key="index" :src="'./assets/' + image.image" :alt="image.alt" @click="selected(index)" />
+                        </div>
+                                       
                 </div>
             </div>
         </div>

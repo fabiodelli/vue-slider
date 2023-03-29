@@ -59,7 +59,9 @@ createApp({
             } else {
                 this.activeImage--
             }
-           
+        },
+        selected(index){
+            this.activeImage = index
         }
     },
 }).mount('#app')

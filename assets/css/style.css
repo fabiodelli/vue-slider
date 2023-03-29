@@ -6,7 +6,7 @@ body {
     object-fit: cover;
     width: 800px;
     height: 500px;
-    border-radius: 25px;
+    
   }
   
   .prev {
@@ -30,6 +30,11 @@ body {
   .b_g{
     background: rgba(0, 0, 0, 0.5) !important ;
     width: 100%;
-    border-bottom-left-radius: 50px;
-    border-bottom-right-radius: 50px;
+    
+  }
+
+  .thumbnail img{
+    width: 200px;
+    aspect-ratio:2/1 ;
+    object-fit: cover;
   }
