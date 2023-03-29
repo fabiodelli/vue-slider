@@ -22,22 +22,29 @@
 
             <h1 class="text-center ">Slider</h1>
             <div class="container">
-                <div class="slider">
-                    <div class="d-flex justify-content-center
-                        position-relative">
-                        <img :src="image" alt="">
-                        <nav class="d-flex justify-content-center p-2">
-                            <button class="prev rounded-5">
-                                <i class="fa fa-arrow-left" aria-hidden="true"></i>
+                <div class="slider d-flex justify-content-center">
+                    <div class="slide d-flex justify-content-center position-relative">
+                        <img :src="'./assets/' + images[activeImage].image" alt="">
+                        <div class="position-absolute b_g text-white bottom-0 p-2">
+                            <h3>{{ images[activeImage].title }}</h3>
+                            <p>{{ images[activeImage].text }}</p>
+                        </div>
+                        <nav class="d-flex justify-content-center">
+                            <button  @click="prev" class="prev rounded-5">
+                                <i class="fa fa-arrow-left" ></i>
                             </button>
-                            <button class="next rounded-5">
-                                <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                            <button @click="next" class="next rounded-5">
+                                <i class="fa fa-arrow-right" ></i>
                             </button>
                         </nav>
                     </div>
                 </div>
             </div>
         </div>
+
+        
+
+        
 
         <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
         <script src="./assets/js/main.js"></script>
