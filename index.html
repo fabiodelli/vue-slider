@@ -40,7 +40,7 @@
                         </nav>
                     </div>
                     <div class="thumbnail d-flex flex-column">
-                        <img v-for="(image, index) in images" :key="index"
+                        <img v-for="(image, index) in images"
                             :src="'./assets/' + image.image" :alt="image.alt"
                             @click="selected(index)" />
                     </div>
